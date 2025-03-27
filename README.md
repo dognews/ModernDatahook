@@ -11,13 +11,13 @@ the address it points to was changed to your custom function acting as a hook.
 Win32k functions now look like this. The assembly is quite convulted so its easier to look at a reconstructed version in C.
 
 ### W32GetSessionState
-![Screenshot_4](https://raw.githubusercontent.com/dognews/ModernDatahook/refs/heads/main/resources/24H2_W32GetSessionState.png)<br/>
+![Screenshot_3](https://raw.githubusercontent.com/dognews/ModernDatahook/refs/heads/main/resources/24H2_W32GetSessionState.png)<br/>
 W32GetSessionState() is getting the session id for the calling threads process, then uses this to get the session state.
 Only win32 threads have a valid sessionid and session state, meaning we have to call from a gui thread context (typical of all win32k functions)
 W32SessionState is an opaque structure, I dont know the type definition and we don't need to know it to redirect functions by changing what these pointers point to.
 
 ### Data hooking 24H2 C View
-![Screenshot_3](https://raw.githubusercontent.com/dognews/ModernDatahook/refs/heads/main/resources/24H2_targetfunction.png)<br/>
+![Screenshot_4](https://raw.githubusercontent.com/dognews/ModernDatahook/refs/heads/main/resources/24H2_target_function.png)<br/>
 The target function makes a call to W32GetSessionState then adds 136 to it and dereferences. After that it adds the offset 336LL to the new address and dereferences again, lastly it adds the offset 768LL then dereferences again to get the memory address. Almost all functions in win32k use this same convention to indirectly call functions. A pattern is easily visible when looking at many of these functions, 136 is always added to the session state then dereferenced, along with that 336LL and 768LL are not consistent, and reference different things. (W32GetSessionState + 136) appears to be a pointer to a group of function tables, with the offset (336LL) jumping to a specific function table in this group. 768LL is likely the offset of the actual function contained within the function table.
 
 ### Implementation
