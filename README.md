@@ -23,7 +23,7 @@ The target function makes a call to W32GetSessionState then adds 136 to it and d
 ### Implementation
 W32GetSessionState is exported by win32k, we can get this export by walking the PsLoadedModuleList for win32k, then calling RtlFindExportedRoutineByName on the module to get our
 target function from the modules export table. Assuming we are operating in a valid win32 gui thread context, calling this function should return a proper session state. This session
-allows us to do exactly what a majority of win32k functions do, find the location of the function pointer inside the sessin state's structure.
+allows us to do exactly what a majority of win32k functions do, find the location of the function pointer inside the session state's structure.
 
 After finding this function pointer, we can read the memory to get the original functions memory address, then write to this pointers memory to change what it points to (make it point to our hook). Our hook can
 call the original function after its execution completes.
