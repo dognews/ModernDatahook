@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Kernel", "Kernel\Kernel.vcxproj", "{8D917A4C-9032-4340-BF6E-9E7719E6D675}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Usermode", "Usermode\Usermode.vcxproj", "{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Debug|ARM64.Build.0 = Debug|ARM64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Debug|x64.ActiveCfg = Debug|x64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Debug|x64.Build.0 = Debug|x64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Debug|x64.Deploy.0 = Debug|x64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Release|ARM64.ActiveCfg = Release|ARM64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Release|ARM64.Build.0 = Release|ARM64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Release|ARM64.Deploy.0 = Release|ARM64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Release|x64.ActiveCfg = Release|x64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Release|x64.Build.0 = Release|x64
+		{8D917A4C-9032-4340-BF6E-9E7719E6D675}.Release|x64.Deploy.0 = Release|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Debug|ARM64.ActiveCfg = Debug|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Debug|ARM64.Build.0 = Debug|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Debug|x64.ActiveCfg = Debug|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Debug|x64.Build.0 = Debug|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Release|ARM64.ActiveCfg = Release|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Release|ARM64.Build.0 = Release|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Release|x64.ActiveCfg = Release|x64
+		{3DA30FF8-7CAE-4C92-B0F6-A632D7458354}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
