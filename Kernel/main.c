@@ -28,7 +28,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT DriverObject, PUNICODE_STRING RegistryPath) 
 	UNREFERENCED_PARAMETER(DriverObject);
 	UNREFERENCED_PARAMETER(RegistryPath);
 
-	if (!NT_SUCCESS(HookFunction(336LL, 768LL, &previous_func, &NtUserEnableWindowGDIScaledDpiMessageHook))) {
+	if (!NT_SUCCESS(HookFunction(336LL, 760LL, &previous_func, &NtUserEnableWindowGDIScaledDpiMessageHook))) {
 		return STATUS_FAILED_DRIVER_ENTRY;
 	}
 
